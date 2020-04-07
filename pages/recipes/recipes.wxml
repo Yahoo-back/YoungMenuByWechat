@@ -1,0 +1,26 @@
+<!--hot.wxml-->
+<view wx:for="{{array}}">
+  {{item}}
+</view>
+<view wx:if="{{view == 'A'}}">
+ A
+</view>
+<view wx:elif="{{view == 'B'}}">
+B
+</view>
+<view wx:else="{{view == 'C'}}">
+C
+</view>
+
+<template name="staffName">
+  <view>FirstName:{{firstName}}</view>
+  <view>lastName:{{lastName}}</view>
+</template>
+<template is="staffName" data="{{...staffA}}"></template>
+
+<wxs module="m1">
+var msg = "hello";
+module.exports.message = msg;
+</wxs>
+<view>{{m1.message}}</view>
+<componentA />

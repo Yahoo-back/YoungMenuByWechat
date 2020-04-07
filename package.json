@@ -1,0 +1,10 @@
+{
+    "name": "weui-miniprogram",
+    "version": "0.2.0",
+    "description": "",
+    "author": "xushengni,tomylin,cunjinli,rockhou",
+    "license": "MIT",
+    "dependencies": {
+        "vant-weapp": "^0.5.28"
+    }
+}

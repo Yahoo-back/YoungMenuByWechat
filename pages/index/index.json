@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "vant-search": "../../miniprogram_npm/vant-weapp/search/index",
+    "mp-searchbar": "../../component/searchbar/searchbar"
+  }
+}

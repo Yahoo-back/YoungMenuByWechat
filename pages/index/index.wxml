@@ -1,0 +1,14 @@
+<view class="page">
+<view class="page_hd"></view>
+<view class="page_bd">
+  <vant-search value="{{value}}" shape="round" background="#4fc08d" bind:search="onSearch" placeholder="请输入关键词进行搜索" />
+ </view>
+ <view>
+  <swiper class="lunbo" indicator-dots="true" autoplay="true" interval="4000">
+    <swiper-item><image src="../../image/bg.jpg"/></swiper-item>
+    <swiper-item><image src="../../image/bg1.jpg"/></swiper-item>
+    <swiper-item><image src="../../image/bg2.jpg"/></swiper-item>
+  </swiper>
+ </view>
+ 
+</view>

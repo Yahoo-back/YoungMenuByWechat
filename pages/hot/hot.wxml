@@ -1,0 +1,6 @@
+<!--hot.wxml-->
+<view class="container">
+  <view class="clickme">{{clickme}}</view>
+  <view wx:for="{{array}}">{{item}}</view>
+  <button bindtap="clickMe">确认</button>
+</view>
