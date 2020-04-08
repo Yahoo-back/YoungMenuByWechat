@@ -1,2 +1,45 @@
 /**index.wxss**/
-
+.weui-grid{
+  border: 1px solid #f59638;
+  padding: 5px 5px;
+  border-radius: 20px;
+  margin: 5px 10px;
+  width: 25%;
+}
+.weui-grids{
+  margin: 5px 5px;
+  border: none;
+}
+.hotSearch{
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #353535;
+  letter-spacing: 1px;
+}
+.weui-grid__label{
+  margin-top: 0px;
+  color: #f59638;
+}
+image{
+  width: 100%;
+}
+.lunbo{
+  padding: 16px;
+}
+.imgRadius{
+  border-radius: 5px;
+}
+.lbImg{
+  background-size: cover;
+}
+.todayEat{
+  padding: 16px 16px 10px;
+}
+.todayImg{
+  padding: 5px 16px;
+}
+.todayImg image{
+  height: 200px;
+  border-radius: 10px;
+}

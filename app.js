@@ -36,5 +36,12 @@ App({
   globalData: {
     userInfo: null,
     globalUrl: 'http://127.0.0.1:3000',
+    scrollHeight: 0,
+    // 每页显示条数 limit
+    limit: 15,
+    uploadtoken: '',
+    windowHeight: 555,
+    windowWidth: 375,
+    openid: ''
   }
 })

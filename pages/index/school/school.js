@@ -6,70 +6,55 @@ Page({
   data: {
     scrollHeight: getApp().globalData.scrollHeight - 48,
     grids: [
-      { 'id': 1, name: '香椿炒鸡蛋', url: '/pages/index/school/school', icon: '' },
-      { 'id': 2, name: '竹笋', url: '/pages/index/school/school', icon: '' },
-      { 'id': 3, name: '青团', url: '/pages/index/school/school', icon: '' },
-      { 'id': 4, name: '春笋', url: '/pages/index/school/school', icon: '' },
+      { 'id': 1, name: '找学校', url: 'pages/recipes/recipes', icon: '../../image/icon1.png' },
+      { 'id': 2, name: '找老师', url: '', icon: '' },
     ],
-    searchLabel: '../../image/menu.png',
     motto: 'Young Menu',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    defaultSize: 'small',
-    primarySize: 'default',
-    warnSize: 'default',
-    disabled: false,
-    plain: false,
-    loading: false,
-    year: '',
-    month: '',
-    day: ''
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //点击右上角分享
-  onShareAppMessage(){
+  onShareAppMessage() {
     return {
       title: 'swiper',
       path: 'page',
     }
   },
-  
-  onSearch:function(){
+
+  onSearch: function () {
     let _t = this;
     wx.request({
-      url: app.globalData.globalUrl + "/getCategoryList", 
-      data:{
+      url: app.globalData.globalUrl + "/getCategoryList",
+      data: {
         keyword: '',
-        paneNum:1,
+        paneNum: 1,
         pageSize: 10
       },
       method: 'GET',
-      header:{
+      header: {
         'content-type': 'application/x-www-form-urlencoded',
       },
-      success:function(res){
+      success: function (res) {
         console.log(res.data)
       }
     })
   },
-  //页面加载
-  onLoad: function () {
-    var timeStamp = Date.parse(new Date());
-    var date = new Date(timeStamp);
-    var year1 = date.getFullYear();
-    var month1 = (date.getMonth() + 1 < 10 ? (date.getMonth() + 1) : date.getMonth() + 1);
-    var day1 = date.getDate() < 10 ? date.getDate() : dete.getDate();
-    this.setData({
-      month: month1,
-      day: day1
+
+
+  //事件处理函数
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
     })
-    console.log(month1)
+  },
+  onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -91,4 +76,15 @@ Page({
       })
     }
   },
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
+  },
+  clickMe: function () {
+    this.setData({ clickme: "欢迎！" })
+  }
 })
