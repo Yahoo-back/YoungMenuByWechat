@@ -6,11 +6,12 @@ Page({
   data: {
     scrollHeight: getApp().globalData.scrollHeight - 48,
     grids: [
-      { 'id': 1, name: '香椿炒鸡蛋', url: '/pages/index/school/school', icon: '' },
+      { 'id': 1, name: '香椿炒鸡蛋', url: '/pages/index/tagDetail/tagDetail', icon: '' },
       { 'id': 2, name: '竹笋', url: '/pages/index/school/school', icon: '' },
       { 'id': 3, name: '青团', url: '/pages/index/school/school', icon: '' },
       { 'id': 4, name: '春笋', url: '/pages/index/school/school', icon: '' },
     ],
+    tags:[],
     searchLabel: '../../image/menu.png',
     motto: 'Young Menu',
     userInfo: {},
@@ -33,11 +34,10 @@ Page({
       path: 'page',
     }
   },
-  
   onSearch:function(){
     let _t = this;
     wx.request({
-      url: app.globalData.globalUrl + "/getCategoryList", 
+      url: app.globalData.globalUrl + "/getTagList", 
       data:{
         keyword: '',
         paneNum:1,
@@ -48,7 +48,6 @@ Page({
         'content-type': 'application/x-www-form-urlencoded',
       },
       success:function(res){
-        console.log(res.data)
       }
     })
   },
@@ -63,7 +62,26 @@ Page({
       month: month1,
       day: day1
     })
-    console.log(month1)
+    //标签
+    let _t = this;
+    wx.request({
+      url: app.globalData.globalUrl + "/getTagList",
+      data: {
+        keyword: '',
+        paneNum: 1,
+        pageSize: 10
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var list = res.data.data.list;
+        _t.setData({
+          tags: list
+        })
+      }
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

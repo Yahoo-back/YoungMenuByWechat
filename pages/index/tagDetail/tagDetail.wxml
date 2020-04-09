@@ -1,0 +1,26 @@
+<view class="page">
+  <view  class="page__bd">
+    <view class="todayImg"><image src="{{img_url}}"/></view>
+  </view>
+  <view  class="page__bd">
+    <view class="title">
+      <text>#{{title}}#</text>
+    </view>
+    <view class="view">
+      <text>{{views}}人浏览{{likes}}人喜欢{{comments}}评论{{create_time}}</text>
+    </view>
+    <view class="desc">
+      <text>{{desc}}</text>
+    </view>
+    <view class="userinfo">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <view class="author">
+        {{author}}
+      </view>
+    </view>
+    <view class="desc">
+      <text>{{content}}</text>
+    </view>
+  </view>
+ 
+</view>

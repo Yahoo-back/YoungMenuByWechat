@@ -5,7 +5,7 @@
     "pages/hot/hot",
     "pages/recipes/recipes",
     "pages/my/my",
-    "pages/index/school/school"
+    "pages/index/tagDetail/tagDetail"
   ],
   "window": {
     "backgroundTextStyle": "dark",
