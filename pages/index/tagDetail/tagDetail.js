@@ -107,7 +107,14 @@ Page({
             var dateee = new Date(create_time1).toJSON();
             var create_time = new Date(+new Date(dateee) + 8 * 3600 * 1000).toISOString().replace(/T/g, ' ').replace(/\.[\d]{3}Z/, '');
             var content = res.data.data.content;
-
+            let obj = app.towxml(content, 'markdown', {
+              theme: 'light',
+              events: {
+                tap: (e) => {
+                  console.log('tap', e);
+                }
+              }
+            });
             _t.setData({
               likes: likes,
               views: views,
@@ -115,7 +122,7 @@ Page({
               desc: desc,
               author: author,
               create_time: create_time,
-              content: content
+              content: obj
             })
           }
         })

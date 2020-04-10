@@ -43,3 +43,7 @@ image{
   height: 200px;
   border-radius: 10px;
 }
+.hotImg image{
+  height: 200px;
+  border-radius: 10px;
+}

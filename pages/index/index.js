@@ -5,12 +5,6 @@ const app = getApp()
 Page({
   data: {
     scrollHeight: getApp().globalData.scrollHeight - 48,
-    grids: [
-      { 'id': 1, name: '香椿炒鸡蛋', url: '/pages/index/tagDetail/tagDetail', icon: '' },
-      { 'id': 2, name: '竹笋', url: '/pages/index/school/school', icon: '' },
-      { 'id': 3, name: '青团', url: '/pages/index/school/school', icon: '' },
-      { 'id': 4, name: '春笋', url: '/pages/index/school/school', icon: '' },
-    ],
     tags:[],
     searchLabel: '../../image/menu.png',
     motto: 'Young Menu',
@@ -25,7 +19,8 @@ Page({
     loading: false,
     year: '',
     month: '',
-    day: ''
+    day: '',
+    menus: []
   },
   //点击右上角分享
   onShareAppMessage(){
@@ -57,7 +52,7 @@ Page({
     var date = new Date(timeStamp);
     var year1 = date.getFullYear();
     var month1 = (date.getMonth() + 1 < 10 ? (date.getMonth() + 1) : date.getMonth() + 1);
-    var day1 = date.getDate() < 10 ? date.getDate() : dete.getDate();
+    var day1 = date.getDate() < 10 ? date.getDate() : date.getDate();
     this.setData({
       month: month1,
       day: day1
@@ -68,7 +63,7 @@ Page({
       url: app.globalData.globalUrl + "/getTagList",
       data: {
         keyword: '',
-        paneNum: 1,
+        pageNum: 1,
         pageSize: 10
       },
       method: 'GET',
@@ -82,6 +77,32 @@ Page({
         })
       }
     })
+    
+    //菜谱
+    wx.request({
+      url: app.globalData.globalUrl + "/getArticleList",
+      data: {
+        keyword: '',
+        pageNum: 1,
+        pageSize: 10,
+        likes: "true",
+        state: 1,
+        tag_id: '',
+        category_id: '',
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var list = res.data.data.list;
+        _t.setData({
+          menus: list
+        })
+        console.log(_t.data.menus)
+      }
+    })
+  
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

@@ -19,7 +19,7 @@
       </view>
     </view>
     <view class="desc">
-      <text>{{content}}</text>
+      <towxml nodes="{{content}}"/>
     </view>
   </view>
  

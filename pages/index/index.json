@@ -3,6 +3,8 @@
     "vant-search": "../../miniprogram_npm/vant-weapp/search/index",
     "van-tabbar": "../../miniprogram_npm/vant-weapp/tabbar/index",
     "van-tabbar-item": "../../miniprogram_npm/vant-weapp/tabbar-item/index",
-    "mp-searchbar": "../../component/searchbar/searchbar"
+    "mp-searchbar": "../../component/searchbar/searchbar",
+    "van-panel": "../../miniprogram_npm/vant-weapp/panel/index",
+    "van-icon:": "../../miniprogram_npm/vant-weapp/icon/index"
   }
 }
