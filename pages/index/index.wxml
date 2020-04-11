@@ -9,10 +9,12 @@
   </view>
   <view class="page__bd">
     <view class="weui-grids">
-      <block wx:for="{{tags}}" wx:key="{{item.id}}">
-        <navigator url="{{item.url}}?tag_id={{item._id}}&tag_name={{item.name}}" class="weui-grid" hover-class="weui-grid_active">
-          <view class="weui-grid__label">{{item.name}}</view>
-        </navigator>
+      <block wx:for="{{tags}}" wx:for-item="item" wx:for-index="i" wx:key="{{item.id}}">
+        <block wx:if="{{i < 6}}">
+          <navigator url="{{item.url}}?tag_id={{item._id}}&tag_name={{item.name}}" class="weui-grid" hover-class="weui-grid_active">
+            <view class="weui-grid__label">{{item.name}}</view>
+          </navigator>
+        </block>
       </block>
     </view>
   </view>
