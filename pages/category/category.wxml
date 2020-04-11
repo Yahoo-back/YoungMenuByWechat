@@ -65,8 +65,8 @@
   <view class="page_bd">
     <view class="weui-grids">
       <block wx:for="{{dessert}}" wx:key="{{item.id}}">
-        <navigator url="/pages/category/menuDetail/menuDetail?keyword={{item.name}}" class="weui-grid" style="border: 1px solid #b22020" hover-class="weui-grid_active">
-          <view class="weui-grid__label" style="color: #b22020">{{item.desc}}</view>
+        <navigator url="/pages/category/menuDetail/menuDetail?keyword={{item.name}}" class="weui-grid" style="border: 1px solid #e9586c" hover-class="weui-grid_active">
+          <view class="weui-grid__label" style="color: #e9586c">{{item.desc}}</view>
         </navigator>
       </block>
     </view>
