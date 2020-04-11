@@ -47,3 +47,9 @@ image{
   height: 200px;
   border-radius: 10px;
 }
+.menuTitle{
+  color:#d3843a;
+}
+.weui-media-box__info{
+  color: rgb(187, 185, 185);
+}
