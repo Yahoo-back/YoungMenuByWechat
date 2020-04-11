@@ -123,11 +123,8 @@ Page({
               todayImg: todayImg,
               todayImgId: todayImgId
             })
-            console.log(_t.data.todayMenu)
           }
-          
         })
-        
       }
     })
     //菜谱

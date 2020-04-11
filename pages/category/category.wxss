@@ -1,1 +1,29 @@
 /* pages/category/category.wxss */
+.clickme {
+  margin-top: 20px;
+}
+.page{
+  background: #fff;
+}
+.weui-grid{
+  padding: 5px 3px;
+  border-radius: 20px;
+  margin: 5px 5px;
+  width: 28%;
+  
+}
+.weui-grids{
+  margin: 5px 16px;
+  border: none;
+}
+.weui-grid__label{
+  margin-top: 0px;
+}
+.hotSearch{
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #353535;
+  letter-spacing: 1px;
+}

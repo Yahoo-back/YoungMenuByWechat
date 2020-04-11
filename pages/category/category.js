@@ -1,66 +1,108 @@
-// pages/category/category.js
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    hotSearch: [],
+    meat: [],
+    hotFood: [],
+    popular: [],
+    dessert: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onLoad: function () {
+    let _t = this;
+    //大家都在搜
+    wx.request({
+      url: app.globalData.globalUrl + "/getCategoryList",
+      data: {
+        keyword: '大家都在搜',
+        pageNum: 1,
+        pageSize: 10
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var hotSearch = res.data.data.list;
+        _t.setData({
+          hotSearch: hotSearch
+        })
+      }
+    })
+    //肉类
+    wx.request({
+      url: app.globalData.globalUrl + "/getCategoryList",
+      data: {
+        keyword: '肉类',
+        pageNum: 1,
+        pageSize: 10
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var meat = res.data.data.list;
+        _t.setData({
+          meat: meat
+        })
+      }
+    })
+    //热门食材
+    wx.request({
+      url: app.globalData.globalUrl + "/getCategoryList",
+      data: {
+        keyword: '热门食材',
+        pageNum: 1,
+        pageSize: 10
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var hotFood = res.data.data.list;
+        _t.setData({
+          hotFood: hotFood
+        })
+      }
+    })
+    //流行学做
+    wx.request({
+      url: app.globalData.globalUrl + "/getCategoryList",
+      data: {
+        keyword: '流行学做',
+        pageNum: 1,
+        pageSize: 10
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var popular = res.data.data.list;
+        _t.setData({
+          popular: popular
+        })
+      }
+    })
+    //烘焙
+    wx.request({
+      url: app.globalData.globalUrl + "/getCategoryList",
+      data: {
+        keyword: '烘焙',
+        pageNum: 1,
+        pageSize: 10
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var dessert = res.data.data.list;
+        _t.setData({
+          dessert: dessert
+        })
+      }
+    })
   }
 })

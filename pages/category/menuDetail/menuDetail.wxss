@@ -1,0 +1,43 @@
+@import'/towxml/style/main.wxss';
+.todayImg image{
+  height: 200px;
+  width: 100%;
+}
+.title{
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.desc{
+  text-align: center;
+  color: #333;
+  padding: 5px;
+}
+.view{
+  text-align: center;
+  font-size: 15px;
+  color: #b4b4b4;
+}
+.userinfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  width: 17%;
+}
+.author{
+  color: #333;
+  height: 80px;
+  line-height: 80px;
+  font-size: 13px;
+  float: left;
+  width: 80%;
+}
+.way{
+  padding: 5px 20px;
+}

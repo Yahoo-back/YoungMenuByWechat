@@ -1,2 +1,74 @@
 <!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+
+<view class="page">
+  <view class="page__bd">
+    <view class="hotSearch">
+      <text class="t1">大家都在搜</text>
+    </view>
+  </view>
+  <view class="page_bd">
+    <view class="weui-grids">
+      <block wx:for="{{hotSearch}}" wx:key="{{item.id}}">
+        <navigator url="/pages/category/menuDetail/menuDetail?keyword={{item.name}}" class="weui-grid" style="border: 1px solid #26b423" hover-class="weui-grid_active">
+          <view class="weui-grid__label" style="color: #26b423">{{item.desc}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="hotSearch">
+      <text class="t1">肉类</text>
+    </view>
+  </view>
+  <view class="page_bd">
+    <view class="weui-grids">
+      <block wx:for="{{meat}}" wx:key="{{item.id}}">
+        <navigator url="/pages/category/menuDetail/menuDetail?keyword={{item.name}}" class="weui-grid"  style="border: 1px solid #f59638" hover-class="weui-grid_active">
+          <view class="weui-grid__label" style="color: #f59638 ">{{item.desc}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="hotSearch">
+      <text class="t1">热门食材</text>
+    </view>
+  </view>
+  <view class="page_bd">
+    <view class="weui-grids">
+      <block wx:for="{{hotFood}}" wx:key="{{item.id}}">
+        <navigator url="/pages/category/menuDetail/menuDetail?keyword={{item.name}}" class="weui-grid" style="border: 1px solid #5562de"    hover-class="weui-grid_active">
+          <view class="weui-grid__label" style="color: #5562de">{{item.desc}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="hotSearch">
+      <text class="t1">流行学做</text>
+    </view>
+  </view>
+  <view class="page_bd">
+    <view class="weui-grids">
+      <block wx:for="{{popular}}" wx:key="{{item.id}}">
+        <navigator url="/pages/category/menuDetail/menuDetail?keyword={{item.name}}" class="weui-grid" style="border: 1px solid #19d7cc" hover-class="weui-grid_active">
+          <view class="weui-grid__label" style="color: #19d7cc">{{item.desc}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <view class="page__bd">
+    <view class="hotSearch">
+      <text class="t1">烘焙</text>
+    </view>
+  </view>
+  <view class="page_bd">
+    <view class="weui-grids">
+      <block wx:for="{{dessert}}" wx:key="{{item.id}}">
+        <navigator url="/pages/category/menuDetail/menuDetail?keyword={{item.name}}" class="weui-grid" style="border: 1px solid #b22020" hover-class="weui-grid_active">
+          <view class="weui-grid__label" style="color: #b22020">{{item.desc}}</view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>

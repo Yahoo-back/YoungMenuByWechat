@@ -5,7 +5,8 @@
     "pages/category/category",
     "pages/my/my",
     "pages/index/tagDetail/tagDetail",
-	  "pages/index/menuDetail/menuDetail"
+	  "pages/index/menuDetail/menuDetail",
+    "pages/category/menuDetail/menuDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
