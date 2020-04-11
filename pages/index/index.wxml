@@ -32,7 +32,11 @@
     <view class="todayEat">
       <text class="t1">{{month}}月{{day}}日|今天吃什么</text>
     </view>
-    <view class="todayImg"><image class="tdImg" src="../../image/bg1.jpg"/></view>
+    <view class="todayImg">
+      <navigator class="menuTitle" url="/pages/index/menuDetail/menuDetail?article_id={{todayImgId}}">
+        <image class="tdImg" src="{{todayImg}}"/>
+      </navigator>
+    </view>
   </view>
   <view class="page__bd">
     <view class="hotSearch">
@@ -41,7 +45,11 @@
     <view class="weui-panel" wx:for="{{menus}}" wx:key="{{item.id}}">
 			<view class="weui-panel__bd">
 				<view class="weui-media-box weui-media-box_text">
-          <view class="hotImg"><image src="{{item.img_url}}"/></view>  
+          <view class="hotImg">
+            <navigator class="menuTitle" url="/pages/index/menuDetail/menuDetail?article_id={{item._id}}">
+              <image src="{{item.img_url}}"/>
+            </navigator>
+          </view>  
 					<h4 class="weui-media-box__title"><navigator class="menuTitle" url="/pages/index/menuDetail/menuDetail?article_id={{item._id}}">{{item.title}}</navigator></h4>
 					<view class="weui-media-box__desc">{{item.desc}}</view>
 					<view class="weui-media-box__info">

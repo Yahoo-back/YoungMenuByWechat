@@ -1,21 +1,21 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
-    "pages/hot/hot",
-    "pages/recipes/recipes",
+    "pages/note/note",
+    "pages/category/category",
     "pages/my/my",
     "pages/index/tagDetail/tagDetail",
-	"pages/index/menuDetail/menuDetail"
+	  "pages/index/menuDetail/menuDetail"
   ],
   "window": {
-    "backgroundTextStyle": "dark",
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "Young Menu",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "selectedColor": "#f19149",
     "list": [
       {
         "text": "首页",
@@ -25,17 +25,16 @@
       },
       {
         "text": "分类",
-        "pagePath": "pages/recipes/recipes",
+        "pagePath": "pages/category/category",
         "iconPath": "image/bar-5.png",
         "selectedIconPath": "image/bar-6.png"
       },
       {
         "text": "笔记",
-        "pagePath": "pages/hot/hot",
+        "pagePath": "pages/note/note",
         "iconPath": "image/bar-3.png",
         "selectedIconPath": "image/bar-4.png"
       },
-     
       {
         "text": "我的",
         "pagePath": "pages/my/my",

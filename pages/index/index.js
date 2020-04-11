@@ -20,7 +20,11 @@ Page({
     year: '',
     month: '',
     day: '',
-    menus: []
+    menus: [],
+    todayCategory: [],
+    todayMenu:[],
+    todayImg: '',
+    todayImgId: ''
   },
   //点击右上角分享
   onShareAppMessage(){
@@ -77,7 +81,55 @@ Page({
         })
       }
     })
-    
+    //今日编辑精选
+    wx.request({
+      url: app.globalData.globalUrl + "/getCategoryList",
+      data: {
+        keyword: '每日推荐',
+        pageNum: 1,
+        pageSize: 10
+      },
+      method: 'GET',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      success: function (res) {
+        var list = res.data.data.list;
+        var category_id = list[0]._id
+        _t.setData({
+          todayCategory: list,
+        })
+        wx.request({
+          url: app.globalData.globalUrl + "/getArticleList",
+          data: {
+            keyword: '每日推荐',
+            pageNum: 1,
+            pageSize: 10,
+            likes: "true",
+            state: 1,
+            tag_id: '',
+            category_id: category_id,
+          },
+          method: 'GET',
+          header: {
+            'content-type': 'application/x-www-form-urlencoded',
+          },
+          success: function (res) {
+            var todayMenu = res.data.data.list;
+            var todayImg = res.data.data.list[0].img_url;
+            var todayImgId = res.data.data.list[0]._id;
+            _t.setData({
+              todayMenu: todayMenu,
+              todayImg: todayImg,
+              todayImgId: todayImgId
+            })
+            console.log(_t.data.todayMenu)
+          }
+          
+        })
+        
+      }
+    })
     //菜谱
     wx.request({
       url: app.globalData.globalUrl + "/getArticleList",
@@ -99,7 +151,6 @@ Page({
         _t.setData({
           menus: list
         })
-        console.log(_t.data.menus)
       }
     })
   
