@@ -1,6 +1,6 @@
 <view class="page">
   <view class="page__bd">
-    <vant-search value="{{value}}" shape="round" background="#f59638" bind:search="onSearch" placeholder="搜你想吃的" />
+    <vant-search shape="round" background="#f59638" bind:search="onSearch" placeholder="搜你想吃的" />
   </view>
   <view class="page__bd">
     <view class="hotSearch">

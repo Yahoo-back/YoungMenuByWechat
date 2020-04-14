@@ -1,0 +1,39 @@
+<!--pages/my/uploadNote/uploadNote.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <van-cell-group>
+        <van-field
+          value="{{ username }}"
+          required
+          clearable
+          label="用户名"
+          icon="question-o"
+          placeholder="请输入用户名"
+          bind:click-icon="onClickIcon"
+        />
+        <van-field
+          value="{{ password }}"
+          type="password"
+          label="密码"
+          placeholder="请输入密码"
+          required
+          border="{{ false }}"
+        />
+        <van-field
+          value="{{ message }}"
+          label="留言"
+          type="textarea"
+          placeholder="请输入留言"
+          autosize
+          border="{{ false }}"
+        />
+      </van-cell-group>
+      <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
+      <view class="btn-area">
+        <button type="primary" class="formBtn" formType="submit">提交</button>
+        <button type="primary" class="formBtn" formType="reset">重置</button>
+      </view>
+    </form>
+  </view>
+</view>

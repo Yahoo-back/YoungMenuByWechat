@@ -5,7 +5,7 @@
     "author": "xushengni,tomylin,cunjinli,rockhou",
     "license": "MIT",
     "dependencies": {
-        "@vant/weapp": "^1.2.0",
+        "@vant/weapp": "^1.2.1",
         "towxml": "^3.0.0",
         "vant-weapp": "^0.5.28"
     }

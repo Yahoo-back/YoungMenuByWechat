@@ -24,7 +24,8 @@ Page({
     todayCategory: [],
     todayMenu:[],
     todayImg: '',
-    todayImgId: ''
+    todayImgId: '',
+    value: ''
   },
   //点击右上角分享
   onShareAppMessage(){
@@ -33,21 +34,9 @@ Page({
       path: 'page',
     }
   },
-  onSearch:function(){
-    let _t = this;
-    wx.request({
-      url: app.globalData.globalUrl + "/getTagList", 
-      data:{
-        keyword: '',
-        paneNum:1,
-        pageSize: 10
-      },
-      method: 'GET',
-      header:{
-        'content-type': 'application/x-www-form-urlencoded',
-      },
-      success:function(res){
-      }
+  onSearch:function(e){
+    wx.navigateTo({
+      url: '/pages/index/searchMenuList/searchMenuList?keyword='+e.detail,
     })
   },
   //页面加载

@@ -6,7 +6,9 @@
     "pages/my/my",
     "pages/index/tagDetail/tagDetail",
 	  "pages/index/menuDetail/menuDetail",
-    "pages/category/menuDetail/menuDetail"
+    "pages/category/menuDetail/menuDetail",
+    "pages/index/searchMenuList/searchMenuList",
+    "pages/my/uploadNote/uploadNote"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,30 @@
+<!--pages/index/searchMenuList/searchMenuList.wxml-->
+  <view class="page__bd">
+    <view class="hotSearch">
+      <text class="t1">-{{keyword}}相关菜谱-</text>
+    </view>
+    <view class="weui-panel" wx:for="{{searchList}}" wx:key="{{item.id}}">
+			<view class="weui-panel__bd">
+				<view class="weui-media-box weui-media-box_text">
+          <view class="hotImg">
+            <navigator class="menuTitle" url="/pages/index/menuDetail/menuDetail?article_id={{item._id}}">
+              <image src="{{item.img_url}}"/>
+            </navigator>
+          </view>  
+					<h4 class="weui-media-box__title"><navigator class="menuTitle" url="/pages/index/menuDetail/menuDetail?article_id={{item._id}}">{{item.title}}</navigator></h4>
+					<view class="weui-media-box__desc">{{item.desc}}</view>
+					<view class="weui-media-box__info">
+						<view class="weui-media-box__info__meta">{{item.author}}</view>
+						<view class="weui-media-box__info__meta">
+              <image style="width: 13px; height: 13px" src="../../image/view.png"/>
+              {{item.meta.views}}
+            </view>
+						<view class="weui-media-box__info__meta weui-media-box__info__meta_extra">
+              <image style="width: 13px; height: 13px" src="../../image/star.png"/>
+              {{item.meta.likes}}
+            </view>
+					</view>
+				</view>
+			</view>
+		</view>
+  </view>

@@ -15,7 +15,13 @@ Page({
       url: '../logs/logs'
     })
   },
+  uploadNote:function() {
+    wx.navigateTo({
+      url: '/pages/my/uploadNote/uploadNote'
+    })
+  },
   onLoad: function () {
+    //获取微信头像及信息
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

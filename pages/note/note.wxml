@@ -1,3 +1,7 @@
 <!--hot.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="page">
+  <view class="page__bd">
+  <button type="primary" size="mini"> 上传笔记 </button>
+  </view>
+</view>
 
