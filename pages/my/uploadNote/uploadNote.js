@@ -5,6 +5,15 @@ Page({
   data: {
     fileList: []
   },
+  //页面加载
+  onLoad: function () {
+    wx.nextTick(() => {
+      this.triggerEvent('changestatus', { visible: !0 })
+    })
+  },
+  inputMsg(e){
+    console.log(e)
+  },
   afterRead(event) {
     const { file } = event.detail;
     // 当设置 mutiple 为 true 时, file 为数组格式，否则为对象格式

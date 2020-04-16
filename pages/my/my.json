@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-uploader": "../../miniprogram_npm/vant-weapp/uploader/index"
+  },
   "navigationBarTitleText": "Young Menu"
+  
 }

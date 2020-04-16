@@ -11,5 +11,22 @@
     <view class="page__bd">
       <button type="primary" size="mini" bindtap="uploadNote"> 上传笔记 </button>
     </view>
+     <view class="page__bd">
+      <button type="primary" size="mini" bindtap="uploadImg"> 上传头像 </button>
+    </view>
+    <!-- <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" /> --> 
+    <view class='img-box'>
+    <view class='img-list'>
+      <block wx:for="{{detailPics}}" wx:key="index">
+        <view class='img-item'>
+          <image src='{{item}}' bindlongpress="bindlongpressimg" data-id='{{index}}'></image>
+        </view>
+      </block>
+      <view class='chooseimg' bindtap='uploadDetailImage'>
+        <view class="weui-uploader__input-box"></view>
+      </view>
+    </view>
+    <view class='tips'>长按对应的图片即可删除</view>
+  </view>
   </view>
 </view>
